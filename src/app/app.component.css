@@ -1,0 +1,11 @@
+#app {
+    background: var(--third-color-1);
+}
+
+main {
+    background: #fff;
+}
+
+/* #sidebar-container {
+    width: 10%;
+} */
