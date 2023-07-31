@@ -1,0 +1,192 @@
+#titulopage{
+text-align: left;
+margin-top: 100px;
+}
+
+#plan-basico{
+    width: 408px;
+    height: 630px;
+    border-radius: 15px;
+    margin-left: 100px;
+    margin-top: 100px;
+    box-shadow: 0px 0px 1px 1px gray; 
+}
+#titulobasico{
+    background-color: #E2E4F4;
+    border-radius: 10px;
+   
+    box-shadow: 0px 0px 1px 1px gray; 
+    color: #6A4BFF;
+    height: 70px;
+  
+  
+    
+}
+#txtbasic{
+    text-align: center;
+  
+    font-size: 24px;
+}
+
+#Gratis{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+ 
+}
+
+#caracteristicas{
+    text-align: center;
+    color: #A0A0A9;
+    font-size: 24px;
+}
+
+#btn{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-end;
+	align-content: stretch;
+
+   
+}
+
+#boton{
+    width: 376px;
+    height: 68px;
+    border-radius: 10px;
+    background-color: #6A4BFF;
+
+}
+
+#plan-avanzado{
+    width: 408px;
+    height: 728px;
+    border-radius: 15px;
+    margin-left: 100px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 1px 1px gray; 
+}
+
+#tituloavanzado{
+    background-color:#6A4BFF;
+    border-radius: 10px;
+   
+    box-shadow: 0px 0px 1px 1px gray; 
+    color: #E2E4F4; 
+    height: 70px;
+  
+  
+    
+}
+
+#caracteristicasavanzado{
+    text-align: center;
+    
+    font-size: 30px;
+}
+
+#btnavanzado{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-end;
+	align-content: stretch;
+    
+}
+
+
+@media (max-width: 1200px) {
+ 
+   
+    #plan-basico{
+        width: 308px;
+        height: 400px;
+        border-radius: 15px;
+      margin-right: 50px;
+        box-shadow: 0px 0px 1px 1px gray; 
+    }
+    #titulobasico{
+        background-color: #E2E4F4;
+        border-radius: 10px;
+       
+        box-shadow: 0px 0px 1px 1px gray; 
+        color: #6A4BFF;
+        height: 60px;
+      
+      
+        
+    }
+
+    #txtbasic{
+        text-align: center;
+      
+        font-size: 10px;
+    }
+
+    #caracteristicas{
+        text-align: center;
+        color: #A0A0A9;
+        font-size: 10px;
+    }
+
+    #plan-avanzado{
+        width: 308px;
+        height: 430px;
+        border-radius: 15px;
+      
+        box-shadow: 0px 0px 1px 1px gray; 
+    }
+    
+    #tituloavanzado{
+        background-color:#6A4BFF;
+        border-radius: 10px;
+       
+        box-shadow: 0px 0px 1px 1px gray; 
+        color: #E2E4F4; 
+        height: 60px;
+      
+      
+        
+    }
+    
+    #caracteristicasavanzado{
+        text-align: center;
+        
+        font-size: 10px;
+    }
+    
+    #btnavanzado{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: stretch;
+        
+    }
+
+    #boton{
+        width: 176px;
+        height: 38px;
+        border-radius: 10px;
+        background-color: #6A4BFF;
+        margin-bottom: 20px;
+    
+    }
+    #titulopage{
+        text-align: left;
+  
+        }
+        #Gratis{
+            text-align: center;
+            font-weight: bold;
+           
+        
+         
+        } 
+}
