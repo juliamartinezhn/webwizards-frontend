@@ -1,0 +1,5 @@
+@media (max-width: 768px) {
+#cont{
+    height: 100px  !important;
+}
+}
