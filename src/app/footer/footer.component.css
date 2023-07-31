@@ -1,0 +1,11 @@
+/* @media (max-width: 768px) { */
+    h4,p,div{
+        /* height: 100px !important; */
+        font-size: .8rem;
+        margin-bottom: .3em;
+    }
+
+    footer{
+        height: fit-content;
+    }
+/* } */
