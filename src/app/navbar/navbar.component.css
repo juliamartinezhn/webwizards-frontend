@@ -1,0 +1,21 @@
+#barra{
+    display: flex;
+    align-content: space-around;
+}
+
+#planess{
+ /* margin-left: 500px;    */
+ /* position: absolute; */
+
+}
+
+#Inicio{
+    /* margin-left: 1000px;   */
+    /* position: absolute; */
+}
+
+#textonav{
+    color: #6A4BFF;
+    
+
+}

@@ -1,0 +1,58 @@
+<div class="container-fluid p-0">
+  <app-navbar></app-navbar>
+
+
+  <div class="row m-0 mt-4" id="contenedorform ">
+    <div class="mx-auto col-10 col-md-8 col-lg-6 col-xl-4">
+      <form class="d-flex flex-column">
+        <h2 id="tituloinicio" class="text-center">Inicia Sesion </h2>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control p-3" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Email" id="email">
+          <small id="emailHelp" class="form-text text-muted m-0">Nunca compartiremos tu email con nadie mas.</small>
+        </div>
+        <div class="form-group mt-2">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control p-3 mb-1" id="exampleInputPassword1" placeholder="**************"
+            id="password">
+        </div>
+        <div class="form-check d-flex  justify-content-between">
+          <div>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+          </div>
+          <div>
+            <a href="">
+              <small id="emailHelp" class="form-text text-muted m-0">Olvidaste tu contraseña?</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column gap-2 mt-4">
+
+          <button type="submit" class="btn btn-primary py-3" id="log">Inicia Sesion </button>
+
+          <button type="submit" class="btn btn-primary py-3" id="logfb">Inicio Sesion Facebook </button>
+        </div>
+      </form>
+
+
+      <div class="d-flex flex-column my-4 pt-2" style="border-top: 1px solid #000;">
+        <div class="d-flex ">
+          <img src="../../assets/Star 2.png" alt="">
+          <h4 class="text-left fs-5">No tienes una cuenta?</h4>
+        </div>
+        <button routerLink="/registro" type="button" class="btn btn-primary mt-2" id="registrate">Registrate
+          aqui</button>
+        <div id="imgwiz" class="d-flex align-items-center">
+          <img src="../../assets/image 3.png" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
+</div>
