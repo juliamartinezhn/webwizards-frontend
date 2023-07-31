@@ -1,8 +1,8 @@
  #tituloinicio{
-margin-left: 100px;
-margin-bottom: 50px;
+/* margin-left: 100px;
+margin-bottom: 50px; */
  }
-#password{
+/* #password{
     width: 460px !important;
     height: 60px !important;
 }
@@ -12,19 +12,19 @@ margin-bottom: 50px;
     width: 460px ;
     height: 60px ;   
 }
-
+ */
 
 #log{
-    width: 460px ;
-    height: 60px ;   
+    /* width: 460px ;
+    height: 60px ;    */
     color: #FFFFFF;
     background-color: #4937A8;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 
 } 
  #logfb{
-    width: 460px ;
-    height: 60px ;   
+    /* width: 460px ;
+    height: 60px ;    */
     color: #FFFFFF;
     background-color: #3B5998;
  }
@@ -61,13 +61,10 @@ margin-bottom: 40px;
     margin-top: 10px;  
 }
 
-#barra{
-    margin-left: 600px;
-    margin-top: 80px;
-}
+
 
 #registrate{
- 
+/*  
     width: 400px ;
-    height: 60px ;   
+    height: 60px ;    */
 }
