@@ -22,3 +22,8 @@ body{
 * {
     font-family: var(--font-family);
 }
+
+
+.item1, .item2 {
+    flex: 1;
+  }
