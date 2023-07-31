@@ -1,6 +1,5 @@
 #sidebar {
     background: var(--third-color-1);
-
 }
 
 #web-name {
@@ -8,9 +7,28 @@
     font-weight: 700;
     color: var(--primary-color-1);
 }
+.active{
+    background: var(--primary-color-2);
+    width: 100%;
+    border-radius: 15px;
+}
+
+.active span, .active i{
+    color: #fff;
+}
 
 .opcion {
     font-size: 1rem;
     color: var(--third-color-2);
     font-weight: 600;
 }
+
+i{
+    color:var(--third-color-2);
+}
+
+.nav-item{
+    padding-left: 1em;
+    color:var(--third-color-2);
+}
+

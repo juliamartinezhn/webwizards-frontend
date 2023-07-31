@@ -1,26 +1,26 @@
 <div id="sidebar" class="px-3 pt-2  d-flex flex-column align-items-sm-center justify-content-between min-vh-100">
-    <div class="d-flex flex-column align-items-end align-items-sm-start">
+    <div class="d-flex flex-column align-items-end align-items-lg-start">
         <a href="/" class="d-flex align-items-center pb-3 mb-3 me-md-auto  text-decoration-none">
             <img src="../../assets/logo.svg">
-            <span id="web-name" class="ms-1 d-none d-sm-inline">Web Wizards</span>
+            <span id="web-name" class="ms-1 d-none d-lg-inline">Web Wizards</span>
         </a>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="mb-4 nav-item">
-                <a href="#" class="row align-items-center nav-link align-middle px-0">
-                    <i class="col-1 fa-solid fa-house fa-lg me-3 " style="color:var(--third-color-2)"></i>
-                    <span class="opcion ms-1 d-none d-sm-inline">Dashboard</span>
+            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveDashboard}" (click)="activate('dashboard')">
+                <a routerLink="/dashboard" class="row align-items-center nav-link align-middle px-0">
+                    <i class="col-1 fa-solid fa-house fa-lg me-3 "></i>
+                    <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Dashboard</span>
                 </a>
             </li>
-            <li class="mb-4 nav-item">
-                <a href="#" class="row align-items-center nav-link px-0 align-middle">
-                    <i class="col-1 fa-solid fa-folder fa-lg me-3 " style="color:var(--third-color-2)"></i>
-                    <span class="opcion ms-1 d-none d-sm-inline">Proyectos</span>
+            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveProyectos}" (click)="activate('proyectos')">
+                <a routerLink="/proyectos" class="row align-items-center nav-link px-0 align-middle">
+                    <i class="col-1 fa-solid fa-folder fa-lg me-3 "></i>
+                    <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Proyectos</span>
                 </a>
             </li>
-            <li class="mb-4 nav-item">
-                <a href="#" class="row align-items-center nav-link px-0 align-middle">
-                    <i class="col-1 fa-solid fa-laptop-code fa-lg me-3 " style="color:var(--third-color-2)"></i>
-                    <span class="opcion ms-1 d-none d-sm-inline">Proyectos</span>
+            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveSnippets}" (click)="activate('snippets')">
+                <a routerLink="/snippets" class="row align-items-center nav-link px-0 align-middle">
+                    <i class="col-1 fa-solid fa-laptop-code fa-lg me-3 "></i>
+                    <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Snippets</span>
                 </a>
             </li>
         </ul>
@@ -31,11 +31,15 @@
 
         <ul class="nav nav-pills flex-column align-items-center">
             <li class="nav-item">
-                <span class="opcion ms-1 d-none d-sm-inline">Configuraciones</span>
+                <i class=" col-1 fa-solid fa-gear fa-lg me-3"></i>
+                <span class="opcion ms-1 d-none  d-lg-inline fs-5 fs-lg-4">Configuraciones</span>
             </li>
-            <li class="mt-2">
-
-                <span class="opcion ms-1 d-none d-sm-inline">Cerrar sesión</span>
+            <li class="nav-item mt-2">
+                
+                <a routerLink="/inicio-sesion" class="row align-items-center nav-link px-0 align-middle">
+                    <i class=" col-1  fa-solid fa-arrow-right-from-bracket fa-lg me-3"></i>
+                    <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Cerrar sesión</span>
+                </a>
             </li>
         </ul>
 

@@ -10,6 +10,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { PlanesComponent } from './planes/planes.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ReusableModelComponent } from './reusable-model/reusable-model.component';
+import { SnippetsComponent } from './snippets/snippets.component';
+import { EditorComponent } from './editor/editor.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +25,16 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     SignupComponent,
     FooterComponent,
-    PlanesComponent
+    PlanesComponent,
+    ProjectsComponent,
+    ReusableModelComponent,
+    SnippetsComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
