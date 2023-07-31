@@ -1,0 +1,42 @@
+<div class="container-fluid" style="height: 100vh;">
+  <a class="d-flex align-items-center pb-3  me-md-auto text-decoration-none">
+    <img src="../../assets/logo.svg">
+    <span id="web-name" class="ms-1 d-none d-lg-inline">Web Wizards</span>
+  </a>
+
+  <div class="d-flex flex-column h-100 p-3">
+    <div class="row contenedor-editor align-content-between ">
+      <div class="col-6 textareas d-flex flex-column row-gap-3 ">
+
+        <div class="textareas-contenedor">
+          <label for="htmlTextarea">HTML</label>
+          <textarea class="col-12 fs-6" [(ngModel)]="htmlCode" (keyup)="run()" id="htmlTextarea"></textarea>
+        </div>
+
+        <div class="textareas-contenedor">
+          <label for="cssTextarea">CSS</label>
+          <textarea class="col-12 fs-6" [(ngModel)]="cssCode" (keyup)="run()" id="cssTextarea"></textarea>
+        </div>
+
+        <div class="textareas-contenedor">
+          <label for="jsTextarea">JavaScript</label>
+          <textarea class="col-12 fs-6" [(ngModel)]="jsCode" (keyup)="run()" id="jsTextarea"></textarea>
+        </div>
+
+      </div>
+      <div class="col-6 editorDetalles d-flex flex-column">
+        <div class="detalles ">
+          <h3 class="fs-3 fs-lg-4">Sin titulo</h3>
+          <p>Creado por: Tú</p>
+          <p>Última modificación hace: 30 minutos</p>
+        </div>
+        <iframe [srcdoc]="output" sandbox=" allow-modals allow-scripts allow-same-origin"></iframe>
+      </div>
+
+    </div>
+    <div class=" mt-3 d-flex justify-content-between fs-6">
+      <a class="">Volver</a>
+      <button class="" type="button" class="btn btn-guardar">Guardar</button>
+    </div>
+  </div>
+</div>

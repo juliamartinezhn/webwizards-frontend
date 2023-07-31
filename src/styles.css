@@ -3,10 +3,20 @@
 
 :root {
     --primary-color-1: #6B4BFF;
+    --primary-color-2:#6A4BFF;
+    --primary-color-3:#E9E4FF;
     --third-color-1: #F8F6FF;
     --third-color-2: #25546F;
+    --gray-1:#92929D;
+    --dark-1:#212121;
 
     --font-family: 'Poppins', sans-serif;
+
+    
+}
+
+body{
+    /* overflow: hidden; */
 }
 
 * {
