@@ -15,6 +15,7 @@ import { ReusableModelComponent } from './reusable-model/reusable-model.componen
 import { SnippetsComponent } from './snippets/snippets.component';
 import { EditorComponent } from './editor/editor.component';
 import { FormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     ProjectsComponent,
     ReusableModelComponent,
     SnippetsComponent,
-    EditorComponent
+    EditorComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

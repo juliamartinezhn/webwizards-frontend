@@ -1,30 +1,48 @@
+.input-model{
+    border-radius: 4px;
+    border: 1px solid #D2D3EC;
+    background: #FFF;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    /* padding: 2em 0;
+ */
+ height: 50px;
+ margin-bottom: .8em;
+}
+
+.btn{
+    height: 50px;
+    border-radius: 16px;
+background: #4937A8;
+}
+
+
 #fila{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: nowrap;
     align-content: stretch;
     margin-left: 100px;
     margin-top: 50px;
-    width: 1000px;
+    width: 1000px; */
 }
 
 
 #imgnsign{
-    display: flex;
+    /* display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
 position: absolute;
-margin-left: 500px;
+margin-left: 500px; */
 }
 
 
 
 #titulopagina{
-    display: flex;
+    /* display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
@@ -32,19 +50,19 @@ margin-left: 500px;
 	align-content: stretch;
 position: absolute;
 margin-left: 600px;
-margin-top: 300px; 
+margin-top: 300px;  */
 }
 
 #registratebtn{
-    width: 190px;
+    /* width: 190px;
     height: 48px;
-    background-color: #4937A8;
+    background-color: #4937A8; */
 }
 
 #regfb{
-    width: 200px;
+    /* width: 200px;
     height: 65px;
-    margin-left: 40px;  
+    margin-left: 40px;   */
     background-color: #3B5998;
 }
 

@@ -1,90 +1,93 @@
-<app-navbar></app-navbar>
-<div class="container p-4">
-<div id="imgnsign"><img src="../../assets/undraw_Engineering_team_a7n2-removebg-preview 1.png" alt="">
- </div>
-<div id="titulopagina"> <h1>Unete hoy a Web Wizards!</h1></div>
-<form>
-    <div class="row " id="fila">
-      <div class="form-group col-md-2">
-        <label for="inputEmail4">Nombre</label>
-        <input type="text" class="form-control" id="inputnombre" placeholder="Tu nombre">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputEmail4">Apellido</label>
-        <input type="email" class="form-control" id="inputapellido" placeholder="Tu Apellido">
-      </div>
-     
-    </div>
-<div class="row" id="fila">
-    <div class="form-group col-md-4">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-      </div>
-      
-</div>
-<div class="row" id="fila">
-    <div class="form-group col-md-4">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-      </div>
-</div>
+<div class="container-fluid p-0" style="height: 100vh;">
+  <app-navbar></app-navbar>
 
-    <div class="row" id="fila">
-     
-      <div class="form-group col-md-2">
-        <label for="inputState">Plan</label>
-        <select id="inputState" class="form-control">
-          <option selected>Avanzado</option>
-          <option>Gratis</option>
-          <option>Plus</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="start">Fecha Nacimiento:</label>
+  <div class="row flex-column-reverse flex-md-row align-items-center justify-content-center py-5" style="min-height: 90%;">
 
-        <input type="date" id="start" name="trip-start"
-               value=""
-               min="1910-01-01" max="2023-12-31">
-      </div>
-    </div>
-
-
-
-    
-
-    <div class="row" id="fila">
-     
-        <div class="form-group col-md-2">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-               Acepto los terminos y condiciones
-                </label>
-              </div>
+    <form class="col-10 col-md-5 col-lg-5 ">
+      <div class="row " id="fila">
+        <div class="form-group col-6">
+          <label for="inputEmail4">Nombre</label>
+          <input class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
         </div>
-       
+        <div class="form-group col-6">
+          <label for="inputEmail4">Apellido</label>
+          <input class="form-control input-model" type="email" id="inputapellido" placeholder="Tu Apellido">
+        </div>
       </div>
 
       <div class="row" id="fila">
-     
-        <div class="form-group col-md-2">
-            <button type="submit" class="btn btn-primary" id="registratebtn">Registrate</button>
-            
+        <div class="form-group col-12">
+          <label for="inputEmail4">Email</label>
+          <input class="form-control input-model" type="email" id="inputEmail4" placeholder="Email">
         </div>
-        <div class="form-group col-md-2">
-            <button type="submit" class="btn btn-primary" id="regfb"> <img src="../../assets/icons8-facebook-60 1.png" alt="" id="fblog"> Registrate con Facebook</button>
-            
+
+      </div>
+      <div class="row" id="fila">
+        <div class="form-group col-12">
+          <label for="inputPassword4">Password</label>
+          <input class="form-control input-model" type="password" id="inputPassword4" placeholder="Password">
         </div>
-    
-      
       </div>
 
-  
-    
-  </form>
+      <div class="row" id="fila">
+
+        <div class="form-group col-6">
+          <label for="inputState">Plan</label>
+          <select class="form-control input-model" id="inputState">
+            <option selected>Avanzado</option>
+            <option>Gratis</option>
+            <option>Plus</option>
+          </select>
+        </div>
+        <div class="form-group col-6">
+          <label for="start">Fecha Nacimiento:</label>
+          <input class="form-control input-model" type="date" id="start" name="trip-start" value="" min="1910-01-01"
+            max="2023-12-31">
+        </div>
+      </div>
 
 
-</div>
+
+
+
+      <div class="row" id="fila">
+
+        <div class="form-group col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Acepto los terminos y condiciones
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row mt-2">
+        <div class="form-group col-6">
+          <button type="submit" class="btn text-white">
+            <img src="../../assets/icons8-facebook-60 1.png" alt="">
+            Registrate con Facebook
+          </button>
+
+        </div>
+        <div class="form-group col-6">
+          <button type="submit" class="btn text-white">Registrate</button>
+
+        </div>
+        
+
+
+      </div>
+
+
+
+    </form>
+    <div class="col-10 col-md-5 col-lg-5 d-flex flex-column align-items-center mb-3">
+      <img src="../../assets/undraw_Engineering_team_a7n2-removebg-preview 1.png" style="max-width: 100%;">
+      <h1 class="text-center">¡Unete hoy a Web Wizards!</h1>
+    </div>
+  </div>
+
   <app-footer></app-footer>
-  
- 
+</div>
