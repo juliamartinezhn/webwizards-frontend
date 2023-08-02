@@ -1,7 +1,24 @@
- #tituloinicio{
-/* margin-left: 100px;
+.input-model {
+    border-radius: 4px;
+    border: 1px solid #D2D3EC;
+    background: #FFF;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+    font-weight: 600;
+    height: 50px;
+    margin-bottom: .8em;
+}
+
+.btn {
+    height: 50px;
+    border-radius: 16px;
+    background: #4937A8;
+}
+
+#tituloinicio {
+    /* margin-left: 100px;
 margin-bottom: 50px; */
- }
+}
+
 /* #password{
     width: 460px !important;
     height: 60px !important;
@@ -14,57 +31,58 @@ margin-bottom: 50px; */
 }
  */
 
-#log{
+#log {
     /* width: 460px ;
     height: 60px ;    */
     color: #FFFFFF;
     background-color: #4937A8;
     /* margin-bottom: 20px; */
 
-} 
- #logfb{
+}
+
+#logfb {
     /* width: 460px ;
     height: 60px ;    */
     color: #FFFFFF;
     background-color: #3B5998;
- }
-
-
- #contenedorform{
-    margin-top: 200px;
- }
-
-
-
-#contlog{
-   margin-top: 50px;
 }
 
-#emailHelp{
+
+#contenedorform {
+    margin-top: 200px;
+}
+
+
+
+#contlog {
+    margin-top: 50px;
+}
+
+#emailHelp {
     color: #4937A8;
     margin-left: 150px;
 }
 
-#imagenlog{
+#imagenlog {
     margin-top: 150px;
     position: absolute;
 }
 
-#imgwiz{
+#imgwiz {
 
-margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 
-#staar{
- 
-    margin-top: 10px;  
+#staar {
+
+    margin-top: 10px;
 }
 
 
 
-#registrate{
-/*  
+#registrate {
+    /*  
     width: 400px ;
     height: 60px ;    */
 }

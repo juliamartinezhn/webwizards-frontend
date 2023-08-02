@@ -6,16 +6,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SnippetsComponent } from './snippets/snippets.component';
 import { EditorComponent } from './editor/editor.component';
+import { PlanesComponent } from './planes/planes.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  
+  {
+    path:"landing-page",
+    component: LandingPageComponent
+  },
   {
     path:"dashboard",
     component: DashboardComponent
   },
   { 
     path: '',   
-    redirectTo: '/dashboard',
+    redirectTo: '/landing-page',
     pathMatch: 'full' 
   },
   { 
@@ -40,8 +45,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:'dashboard',
-    component:DashboardComponent
+    path:'planes',
+    component:PlanesComponent
   }
 ];
 
