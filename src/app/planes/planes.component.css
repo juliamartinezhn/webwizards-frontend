@@ -132,14 +132,13 @@ margin: 0 auto;
 
     #txtbasic{
         text-align: center;
-      
-        font-size: 10px;
+    
     }
 
     #caracteristicas{
         text-align: center;
         color: #A0A0A9;
-        font-size: 10px;
+      
     }
 
     #plan-avanzado{
@@ -165,8 +164,7 @@ margin: 0 auto;
     
     #caracteristicasavanzado{
         text-align: center;
-        
-        font-size: 10px;
+      
     }
     
     #btnavanzado{
