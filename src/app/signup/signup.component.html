@@ -9,7 +9,7 @@
           <label for="inputEmail4">Nombre</label>
           <input [ngClass]="{'wrong-input':nombre?.invalid && (nombre?.dirty || nombre?.touched)}" formControlName="nombre" class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
           <div *ngIf="nombre?.invalid &&(nombre?.dirty || nombre?.touched)" class="wrong-format ">
-    <span *ngIf="nombre?.errors.required"></span>
+   
            </div>
         </div>
         <div class="form-group col-6">
