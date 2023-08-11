@@ -9,9 +9,9 @@ import {ReactiveFormsModule} from '@angular/forms';
 export class SignupComponent implements OnInit {
   formularioRegistro = new FormGroup({
     nombre:new FormControl('', [Validators.required,Validators.maxLength(10)]),
-    apellido:new FormControl('',[Validators.required]),
+    apellido:new FormControl('',[Validators.required,Validators.maxLength(10)]),
     email: new FormControl ('',[Validators.required, Validators.pattern(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)]),
-    password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.[A-Z])(?=.\d)(?=.[!@#$%^&()\-_=+{};:,<.>])(?!.*\s).{8,}$/ )]),
+    password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/)]),
     fechaNacimiento:new FormControl('',[Validators.required])
    
   });
@@ -36,7 +36,11 @@ export class SignupComponent implements OnInit {
   get fechaNacimiento (){
     return this.formularioRegistro.get('fechaNacimiento');
   }
+  iniciarSesion(){
+    console.log(this.formularioRegistro.value);
+    console.log(this.formularioRegistro.value);
 
+  }
 
 
 }
