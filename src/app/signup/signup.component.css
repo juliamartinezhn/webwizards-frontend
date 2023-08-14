@@ -68,3 +68,12 @@ margin-top: 300px;  */
 
 
 
+.wrong-format {
+    color: #f00;
+    /* text-transform: initial; */
+    font-size: 0.7rem;
+  }
+
+.wrong-input{
+    border: 1px solid #f00;
+}
