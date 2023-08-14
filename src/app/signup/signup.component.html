@@ -7,7 +7,11 @@
       <div class="row " id="fila">
         <div class="form-group col-6">
           <label for="inputEmail4">Nombre</label>
-          <input class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
+
+          <input [ngClass]="{'wrong-input':nombre?.invalid && (nombre?.dirty || nombre?.touched)}" formControlName="nombre" class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
+          <div *ngIf="nombre?.invalid &&(nombre?.dirty || nombre?.touched)" class="wrong-format ">
+   
+           </div>
         </div>
         <div class="form-group col-6">
           <label for="inputEmail4">Apellido</label>
@@ -41,7 +45,8 @@
         </div>
         <div class="form-group col-6">
           <label for="start">Fecha Nacimiento:</label>
-          <input class="form-control input-model" type="date" id="start" name="trip-start" value="" min="1910-01-01"
+          
+          <input [ngClass]="{'wrong-input':fechaNacimiento?.invalid }" formControlName="fechaNacimiento" class="form-control input-model" type="date" id="start" name="trip-start" value="" min="1910-01-01"
             max="2023-12-31">
         </div>
       </div>
@@ -72,7 +77,7 @@
 
         </div>
         <div class="form-group col-6">
-          <button type="submit" class="btn text-white">Registrate</button>
+          <button  [disabled]="!formularioRegistro.valid"  (click)="iniciarSesion()" type="button" class="btn text-white">Registrate</button>
 
         </div>
         
