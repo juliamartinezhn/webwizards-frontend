@@ -1,5 +1,5 @@
 #titulopage{
-text-align: left;
+text-align: center;
 margin-top: 100px;
 }
 
@@ -7,8 +7,8 @@ margin-top: 100px;
     width: 408px;
     height: 630px;
     border-radius: 15px;
-    margin-left: 100px;
-    margin-top: 100px;
+    margin: 0 auto;
+        margin-bottom: 30px;
     box-shadow: 0px 0px 1px 1px gray; 
 }
 #titulobasico{
@@ -66,8 +66,8 @@ margin-top: 100px;
     width: 408px;
     height: 728px;
     border-radius: 15px;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin: 0 auto;
+        margin-bottom: 30px;
     box-shadow: 0px 0px 1px 1px gray; 
 }
 
@@ -100,15 +100,23 @@ margin-top: 100px;
 }
 
 
+
+
 @media (max-width: 1200px) {
- 
+    #titulopage{
+        text-align: center;
+margin-left: 25%;
+margin-right: 25%;
+    
+        }
    
     #plan-basico{
-        width: 308px;
-        height: 400px;
+        width: 55%;
+        height: auto;
         border-radius: 15px;
-      margin-right: 50px;
+margin: 0 auto;
         box-shadow: 0px 0px 1px 1px gray; 
+        margin-bottom: 50px;
     }
     #titulobasico{
         background-color: #E2E4F4;
@@ -124,21 +132,21 @@ margin-top: 100px;
 
     #txtbasic{
         text-align: center;
-      
-        font-size: 10px;
+    
     }
 
     #caracteristicas{
         text-align: center;
         color: #A0A0A9;
-        font-size: 10px;
+      
     }
 
     #plan-avanzado{
-        width: 308px;
-        height: 430px;
+        width: 60%;
+        height: auto;
         border-radius: 15px;
-      
+        margin: 0 auto;
+        margin-bottom: 30px;
         box-shadow: 0px 0px 1px 1px gray; 
     }
     
@@ -156,8 +164,7 @@ margin-top: 100px;
     
     #caracteristicasavanzado{
         text-align: center;
-        
-        font-size: 10px;
+      
     }
     
     #btnavanzado{
