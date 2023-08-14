@@ -8,16 +8,18 @@ import {ReactiveFormsModule} from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   formularioRegistro = new FormGroup({
-    nombre:new FormControl('', [Validators.required,Validators.maxLength(10)]),
-    apellido:new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    nombre:new FormControl('', [Validators.required]),
+    apellido:new FormControl('',[Validators.required]),
     email: new FormControl ('',[Validators.required, Validators.pattern(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)]),
-    password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/)]),
+    password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&()\-_=+{};:,<.>])(?!.*\s).{8,}$/)]),
+    plan: new FormControl('Gratis'),
     fechaNacimiento:new FormControl('',[Validators.required])
    
   });
 
   constructor(){  }
   ngOnInit () : void {
+
   
   }
   get nombre (){
