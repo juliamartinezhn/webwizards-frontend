@@ -3,29 +3,46 @@
 
   <div class="row flex-column-reverse flex-md-row align-items-center justify-content-center py-5" style="min-height: 90%;">
 
-    <form class="col-10 col-md-5 col-lg-5 ">
+    <form  [formGroup]="formularioRegistro" class="col-10 col-md-5 col-lg-5 ">
       <div class="row " id="fila">
         <div class="form-group col-6">
           <label for="inputEmail4">Nombre</label>
-          <input class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
+          <input [ngClass]="{'wrong-input':nombre?.invalid && (nombre?.dirty || nombre?.touched)}" formControlName="nombre" class="form-control input-model" type="text" id="inputnombre" placeholder="Tu nombre">
+          <div *ngIf="nombre?.invalid &&(nombre?.dirty || nombre?.touched)" class="wrong-format ">
+   
+           </div>
         </div>
         <div class="form-group col-6">
-          <label for="inputEmail4">Apellido</label>
-          <input class="form-control input-model" type="email" id="inputapellido" placeholder="Tu Apellido">
+          <label for="input">Apellido</label>
+
+          <input  [ngClass]="{'wrong-input':apellido?.invalid &&(apellido?.dirty || apellido?.touched)}" formControlName="apellido"  class="form-control input-model" type="text" id="inputapellido" placeholder="Tu Apellido">
+          <div *ngIf="apellido?.invalid &&(apellido?.dirty || apellido?.touched)" class="wrong-format ">
+            <P>Error al llenar campo apellido</P>
+                  </div>
         </div>
       </div>
 
       <div class="row" id="fila">
         <div class="form-group col-12">
           <label for="inputEmail4">Email</label>
-          <input class="form-control input-model" type="email" id="inputEmail4" placeholder="Email">
+
+          <input  [ngClass]="{'wrong-input':email?.invalid &&(email?.dirty || email?.touched)}" formControlName="email"  class="form-control input-model" type="email" id="inputEmail4" placeholder="Email">
+          <div *ngIf="email?.invalid &&(email?.dirty || email?.touched)" class="wrong-format ">
+            <P>Error al llenar campo email asegurese de ingresar email valido</P>
+                  </div>
+
+          
         </div>
 
       </div>
       <div class="row" id="fila">
         <div class="form-group col-12">
           <label for="inputPassword4">Password</label>
-          <input class="form-control input-model" type="password" id="inputPassword4" placeholder="Password">
+          <input [ngClass]="{'wrong-input':password?.invalid &&(password?.dirty || password?.touched)}" formControlName="password" class="form-control input-model" type="password" id="inputPassword4" placeholder="Password">
+          <div *ngIf="password?.invalid &&(password?.dirty || password?.touched)" class="wrong-format ">
+            <P>Error al llenar campo password asegurese de ingresar password valido con un caracter especial, una mayuscula minimo, minusculas y 8 o mas caracteres en total</P>
+                  </div>
+        
         </div>
       </div>
 
@@ -41,7 +58,8 @@
         </div>
         <div class="form-group col-6">
           <label for="start">Fecha Nacimiento:</label>
-          <input class="form-control input-model" type="date" id="start" name="trip-start" value="" min="1910-01-01"
+          
+          <input [ngClass]="{'wrong-input':fechaNacimiento?.invalid }" formControlName="fechaNacimiento" class="form-control input-model" type="date" id="start" name="trip-start" value="" min="1910-01-01"
             max="2023-12-31">
         </div>
       </div>
@@ -72,7 +90,7 @@
 
         </div>
         <div class="form-group col-6">
-          <button type="submit" class="btn text-white">Registrate</button>
+          <button  [disabled]="!formularioRegistro.valid"  (click)="iniciarSesion()" type="button" class="btn text-white">Registrate</button>
 
         </div>
         
