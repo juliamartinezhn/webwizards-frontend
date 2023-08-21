@@ -18,10 +18,10 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="exampleInputPassword1">Contraseña</label>
-                    <input formControlName="contrasenia" id="password" type="password" class="form-control input-model mb-1"
-                        [ngClass]="{'wrong-input' : contrasenia?.invalid && (contrasenia?.dirty || contrasenia?.touched)}"
+                    <input formControlName="password" id="password" type="password" class="form-control input-model mb-1"
+                        [ngClass]="{'wrong-input' : password?.invalid && (password?.dirty || password?.touched)}"
                         placeholder="**************"  required>
-                    <div *ngIf="contrasenia?.invalid && (contrasenia?.dirty || contrasenia?.touched)" class="wrong-format">Campo requerido</div>
+                    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="wrong-format">Campo requerido</div>
                 </div>
                 <div class="form-check d-flex  justify-content-between">
                     <div>
