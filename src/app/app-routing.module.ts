@@ -8,6 +8,7 @@ import { SnippetsComponent } from './snippets/snippets.component';
 import { EditorComponent } from './editor/editor.component';
 import { PlanesComponent } from './planes/planes.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ConfigComponent } from './config/config.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path:'planes',
     component:PlanesComponent
+  },
+  {
+    path : 'config',
+    component:ConfigComponent
   }
 ];
 

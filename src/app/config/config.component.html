@@ -1,0 +1,66 @@
+<div class="container-fluid" style="background: var(--third-color-1);">
+    <div class="row flex-nowrap">
+        <div class="col-auto  col-md-3 col-lg-3  px-sm-2 px-0 " style="max-width: 400px;">
+            <app-sidebar></app-sidebar>
+        </div>
+
+<div style="background-color: white;">
+    <div class="container fw-bold" style="color: var(--third-color-2); padding: 3em;">
+        <div>
+            <p class="fs-3 fs-lg-4">Bienvenido,{{ usuarioLoggeado.nombre }} </p>
+          </div>
+    
+    
+        <div id="divcont">
+            <img src="../../assets/5095021.png" alt="" id="profilepic">
+            <div id="textos">
+                <h5 id="titulo"></h5>
+                <p id="parrafos">Actualmente cuentas con el plan : {{usuarioLoggeado.plan}}</p>
+            </div>
+    
+                     
+                </div>
+    
+    
+                
+            <div class="row justify-content-evenly">
+                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+                 
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets se cargan automaticamente</label>
+                      </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+            
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Tu perfil es publicos</label>
+                      </div>
+                </div>
+    
+    
+    
+                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+            
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus proyectos son publicos</label>
+                      </div>
+                </div>
+    
+    
+                
+                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+            
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets son publicos</label>
+                      </div>
+                </div>
+    
+    
+    
+                
+              </div>
+    </div>
