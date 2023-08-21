@@ -17,11 +17,13 @@ export class SidebarComponent  {
   isActiveDashboard = false;
   isActiveProyectos = false;
   isActiveSnippets = false;
+  isActiveconfig=false;
 
   activate(item: string) {
     this.isActiveDashboard = item === 'dashboard';
     this.isActiveProyectos = item === 'proyectos';
     this.isActiveSnippets = item === 'snippets';
+    this.isActiveconfig = item === 'config';
   }
 
   cerrarSesion(){
