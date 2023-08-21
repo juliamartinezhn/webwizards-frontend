@@ -23,9 +23,9 @@ const routes: Routes = [
     redirectTo: '/landing-page',
     pathMatch: 'full' 
   },
-  { 
-    path: 'proyectos',   
-    component: ProjectsComponent 
+  {
+    path: 'proyectos/:carpetaNombre',
+    component: ProjectsComponent
   },
   { 
     path: 'snippets',   

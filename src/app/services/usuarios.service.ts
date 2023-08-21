@@ -28,4 +28,12 @@ export class UsuariosService {
       withCredentials: true
     });
   }
+  logIn(usuario: any) :Observable<any> {
+    return this.http.post("http://localhost:8888/usuarios/login",usuario,{
+      withCredentials: true
+    });
+  }
+  
+
 }
+
