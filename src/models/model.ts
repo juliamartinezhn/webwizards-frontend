@@ -4,6 +4,7 @@ export interface Usuario {
     email?: string;
     plan?: string;
     fechaNacimiento?: string;
+    projectsFolder?: Folders;
 }
 
 export interface Projects {
@@ -15,7 +16,8 @@ export interface Snippets {
 }
 
 export interface Folders {
-    nameFolder: string;
+    _id?: string;
+    nameFolder?: string;
     children?: Array<Folders | Projects | Snippets>
 }
 

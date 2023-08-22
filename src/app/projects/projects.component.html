@@ -39,7 +39,7 @@
             </div>
           </nav>
         </div>
-        <app-reusable-model [content]="content" type="project" />
+        <app-reusable-model *ngIf="content.length > 0" [content]="content" type="project" />
       </div>
       
 <!-- Modal -->

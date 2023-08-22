@@ -29,7 +29,6 @@ export class UsuariosService {
     });
   }
   logIn(usuario: any) :Observable<any> {
-  console.log(usuario);
     return this.http.post("http://localhost:8888/usuarios/login",usuario,{
       withCredentials: true
     });
