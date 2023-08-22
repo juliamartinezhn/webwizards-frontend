@@ -7,6 +7,16 @@ import { Folders, Projects } from 'src/models/model';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
   content:Array<Folders | Projects> = [
     {
       nameProject:"Prueba"

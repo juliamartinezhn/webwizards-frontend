@@ -21,10 +21,18 @@
               <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
                 <ul class="navbar-nav  mb-2 mb-lg-0 align-items-center align-items-md-end">
                   <li class="nav-item">
-                    <span class="me-lg-3 fs-5 fs-lg-6" style="color: var(--primary-color-2);">Crear proyecto</span>
+                  
+                    <!-- Button trigger modal -->
+<button   (click)="openModal()"         type="button" id="btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <span   class="me-lg-3 fs-5 fs-lg-6" style="color: var(--primary-color-2);">Crear proyecto</span>
+</button>
+<app-reusable-modal *ngIf="isModalOpen" [exampleModalLabel]="'exampleModalLabel'" [exampleModal]="'exampleModal'" [title]="'Crear proyecto'" [Crear]="'Crear'" (closeModalEvent)="closeModal()"></app-reusable-modal>
                   </li>
                   <li class="nav-item">
-                    <span class=" fs-5 fs-lg-6" style="color: var(--primary-color-2);">Crear carpeta</span>
+                    <button (click)="openModal()" type="button" id="btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                      <span class=" fs-5 fs-lg-6" style="color: var(--primary-color-2);">Crear carpeta</span>
+                    </button>
+                    <app-reusable-modal *ngIf="isModalOpen"  [exampleModalLabel]="'exampleModalLabel2'" [exampleModal]="'exampleModal2'" [title]="'Crear carpeta'" [Crear]="'Crear Carpeta'" (closeModalEvent)="closeModal()"></app-reusable-modal>
                   </li>
                 </ul>
               </div>
@@ -33,6 +41,11 @@
         </div>
         <app-reusable-model [content]="content" type="project" />
       </div>
+      
+<!-- Modal -->
+
+
+
     </main>
   </div>
 </div>
