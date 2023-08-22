@@ -19,7 +19,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
-import { ReusableModalComponent } from './reusable-modal/reusable-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +35,7 @@ import { ReusableModalComponent } from './reusable-modal/reusable-modal.componen
     SnippetsComponent,
     EditorComponent,
     LandingPageComponent,
-    ConfigComponent,
-    ReusableModalComponent
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
