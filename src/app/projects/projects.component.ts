@@ -11,6 +11,17 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+
+    isModalOpen = false;
+
+    openModal() {
+      this.isModalOpen = true;
+    }
+  
+    closeModal() {
+      this.isModalOpen = false;
+    }
+
     usuarioLoggeado: Usuario = {};
     content: Array<Folders | Projects> = [];
     constructor(
