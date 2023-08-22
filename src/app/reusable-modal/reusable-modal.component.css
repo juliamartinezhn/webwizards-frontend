@@ -1,0 +1,31 @@
+.wrong-format {
+    color: #f00;
+    font-size: 0.7rem;
+}
+
+.wrong-input {
+    border: 1px solid #f00;
+}
+
+#texto{
+    margin: 0 auto; /* Center horizontally */
+  text-align: center; /* Center text within input */
+}
+
+#guardar{
+    background-color: #6A4BFF;
+    border-radius: 15;
+}
+
+
+#cancelar{
+    background-color: #FFFFFF;
+    color: #6A4BFF;
+    border-radius: 15;
+    border-color: #6A4BFF;
+}
+
+h5{
+    margin: 0 auto; /* Center horizontally */
+  text-align: center; /* Center text within input */ 
+}
