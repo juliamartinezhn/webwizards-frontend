@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+
     usuarioLoggeado: Usuario = {};
     content: Array<Folders | Projects> = [];
     constructor(
