@@ -7,6 +7,16 @@ import { Folders, Snippets } from 'src/models/model';
   styleUrls: ['./snippets.component.css']
 })
 export class SnippetsComponent {
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
+
   content:Array<Folders | Snippets> = [
     {
       nameSnippet:"Bucle for in"
