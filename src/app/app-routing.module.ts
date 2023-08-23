@@ -33,7 +33,7 @@ const routes: Routes = [
     component: SnippetsComponent 
   },
   {
-    path:'editor',
+    path:'editor/:idProyecto',
     component: EditorComponent 
   },
 

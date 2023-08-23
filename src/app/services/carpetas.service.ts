@@ -9,10 +9,14 @@ import { Folders } from 'src/models/model';
 export class CarpetasService {
 
   constructor(private http: HttpClient) { }
-  // usuarioLoggeado:Usuario = {};
 
+  // Obtener hijos de un folder
   obtenerCarpetasHijas(idCarpetaPadre:any): Observable<any> {
-    console.log(idCarpetaPadre)
     return this.http.get(`http://localhost:8888/carpetas/hijos/${idCarpetaPadre}`);
+  }
+
+  // Crear un carpeta
+  crearCarpeta(idCarpetaPadre: any, nombreCarpeta: any): Observable<any> {
+    return this.http.post(`http://localhost:8888/carpetas/${idCarpetaPadre}`, nombreCarpeta);
   }
 }

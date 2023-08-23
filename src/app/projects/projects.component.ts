@@ -12,14 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectsComponent {
     isModalOpen = false;
-
-    openModal() {
-      this.isModalOpen = true;
-    }
-  
-    closeModal() {
-      this.isModalOpen = false;
-    }
+    title = '';
+    carpetaActual: any = '';
     usuarioLoggeado: Usuario = {};
     content: Array<Folders | Projects> = [];
     constructor(
@@ -32,10 +26,13 @@ export class ProjectsComponent {
 
     async ngOnInit() {
         this.route.params.subscribe(async params => {
-            const carpetaNombre = params['carpetaNombre'];
+            
+            
             if (params['carpetaNombre'] === 'unidad') {
                 await this.getUsuarioLoggeado();
+                
             } else {
+                this.carpetaActual = params['carpetaNombre'];
                 await this.getCarpetasHijas(params['carpetaNombre']);
             }
         });
@@ -44,30 +41,27 @@ export class ProjectsComponent {
 
     getUsuarioLoggeado() {
         this.usuariosServicio.obtenerInfoUsuario()
-            .subscribe(
-                res => {
+            .subscribe (
+                async(res:any) => {
                     this.usuarioLoggeado = res;
+                    
                     if (this.usuarioLoggeado.projectsFolder) {
                         this.getCarpetasHijas(this.usuarioLoggeado.projectsFolder._id);
+                        this.carpetaActual =  await res.projectsFolder?._id;
+                        
                     }
                 }
             );
     }
 
     getCarpetasHijas(id: any) {
-        
+
         this.carpetasService.obtenerCarpetasHijas(id)
             .subscribe(
-                (response: any) => {
-                    
+                async (response: any) => {
+
                     if (response.statusCode === 200) {
-                        if (response.children.length === 0) {
-                            window.history.back();
-                            alert("Carpeta vacía");
-                        } else {
-                            this.content = response.children;
-                        }
-                        
+                        this.content = await response.children;
                     } else {
                         alert(response.message);
                     }
@@ -79,32 +73,20 @@ export class ProjectsComponent {
 
     }
 
-    // Función para transformar la respuesta del backend
-    //     transformResponse(response: any) {
-    //         const transformedData: any = [];
+    async actualizarContent(content: any) {
+        await this.getCarpetasHijas(this.carpetaActual);
 
-    //         // Recorremos los elementos en children
-    //         response.children.forEach((child: any) => {
-    //             const newItem = {
-    //                 nameFolder: child?.nameFolder,
-    //                 children: []
-    //             };
-    // console.log(child)
-    //             // Buscamos elementos relacionados en parent
-    //             const relatedParent = response.parent.find((parent: any) => parent._id === child.parent);
+    }
 
-    //             if (relatedParent) {
-    //                 newItem.nameFolder = relatedParent.nameFolder;
-    //             }
+    openModal(title: string) {
+        this.title = title;
+    }
 
-    //             transformedData.push(newItem);
-    //         });
+    closeModal() {
+        this.isModalOpen = false;
+    }
 
-    //         return transformedData;
-    //     }
-
-
-
+  
     /**
      * 
      * [

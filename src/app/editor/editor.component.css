@@ -11,15 +11,12 @@ textarea{
     padding: 1em;
 }
 
-/* .code-container{
-    height: 33%;
-} */
+
 label{
     background: var(--primary-color-1);
     transform: translate(10px, -10px);
     font-size: .8rem;
     flex: 0 0 auto;
-    /* display: none; */
     position: absolute;
 }
 
@@ -30,6 +27,18 @@ label{
 
 .editorDetalles p{
     font-size: .9rem;
+}
+
+#guardar{
+    background-color: #6A4BFF;
+    border-radius: 15;
+}
+
+.btn-cancelar{
+    background-color: #FFFFFF;
+    color: #6A4BFF;
+    border-radius: 15;
+    border-color: #6A4BFF;
 }
 
 .btn-guardar{

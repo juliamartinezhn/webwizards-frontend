@@ -9,7 +9,6 @@ import { Usuario } from 'src/models/model';
 export class UsuariosService {
 
   constructor(private http: HttpClient) { }
-  // usuarioLoggeado:Usuario = {};
 
   registroUsuario(usuario: any):Observable<any>{
     return this.http.post("http://localhost:8888/usuarios",usuario,{

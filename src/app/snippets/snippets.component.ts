@@ -8,10 +8,13 @@ import { Folders, Snippets } from 'src/models/model';
 })
 export class SnippetsComponent {
   isModalOpen = false;
+    title='';
 
-  openModal() {
-    this.isModalOpen = true;
-  }
+    openModal(title:string) {
+    //   this.isModalOpen = true;
+        this.title = title;
+    }
+  
 
   closeModal() {
     this.isModalOpen = false;

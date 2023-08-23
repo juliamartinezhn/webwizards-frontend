@@ -8,10 +8,15 @@ export interface Usuario {
 }
 
 export interface Projects {
-    nameProject: string;
+    _id?: string;
+    nameProject?: string;
+    html?: string;
+    css?: string;
+    js?: string;
 }
 
 export interface Snippets {
+    _id?: string;
     nameSnippet: string;
 }
 
@@ -23,6 +28,7 @@ export interface Folders {
 
 
 export interface ContentItem {
+    _id?: string;
     nameFolder?: string;
     nameSnippet?: string;
     nameProject?: string;
