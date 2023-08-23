@@ -1,6 +1,11 @@
 
-import { Component, ViewChild, ElementRef, AfterViewInit, SecurityContext } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, Input, OnChanges  } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { UsuariosService } from '../services/usuarios.service';
+import { ProyectosService } from '../services/proyectos.service';
+import { CarpetasService } from '../services/carpetas.service';
+import { Projects } from 'src/models/model';
 
 
 @Component({
@@ -9,38 +14,85 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements AfterViewInit {
-  
+
   @ViewChild('iframeRef', { static: true }) iframeRef!: ElementRef<HTMLIFrameElement>;
 
   ngAfterViewInit() {
-    this.run();
+    this.run(this.proyecto);
   }
   htmlCode: string = "";
   cssCode: string = "";
   jsCode: string = "";
   output: SafeHtml = "";
 
-  constructor(private sanitizer: DomSanitizer) {}
+  proyecto: Projects = {};
+  constructor(
+    private sanitizer: DomSanitizer,
+    private route: ActivatedRoute,
+    private usuariosServicio: UsuariosService,
+    private proyectosServicio: ProyectosService,
+    private carpetasService: CarpetasService
+  ) { }
 
-  run() {
-    const fullCode  = `
+  
+
+  async ngOnInit() {
+    this.route.params.subscribe(async params => {
+      const idProyecto = params['idProyecto'];
+      await this.getInfoProyecto(idProyecto);
+      
+    });
+    
+  }
+
+  getInfoProyecto(idProyecto:string) {
+    this.proyectosServicio.obtenerInfoProyecto(idProyecto)
+      .subscribe(
+        res => {
+          this.proyecto = res.project;
+          this.run(this.proyecto);
+          console.log(this.proyecto)
+        }
+      );
+  }
+
+  saveProject(proyecto:Projects){
+    this.proyectosServicio.guardarProyecto(proyecto._id, 
+      {
+        html: proyecto.html,
+        css: proyecto.css,
+        js: proyecto.js,
+
+      }).subscribe(
+        res => {
+          alert(res.message);
+        }
+      );
+  }
+
+  goBack() {
+    window.history.back();
+  }
+
+  run(proyecto:any) {
+    const fullCode = `
       <!DOCTYPE html>
       <html>
       <head>
         <style>
-          ${this.cssCode}
+          ${proyecto.css}
         </style>
       </head>
       <body>
-        ${this.htmlCode}
+        ${proyecto.html}
         <script>
-          ${this.jsCode}
+          ${proyecto.js}
         </script>
       </body>
       </html>
     `;
     // this.iframeRef.nativeElement.srcdoc = fullCode;
     this.output = this.sanitizer.bypassSecurityTrustHtml(fullCode);
-    
+
   }
 }

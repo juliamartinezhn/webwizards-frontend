@@ -1,42 +1,62 @@
 <div class="container-fluid" style="height: 100vh;">
-  <a class="d-flex align-items-center pb-3  me-md-auto text-decoration-none">
-    <img src="../../assets/logo.svg">
-    <span id="web-name" class="ms-1 d-none d-lg-inline">Web Wizards</span>
-  </a>
+	<a class="d-flex align-items-center pb-3  me-md-auto text-decoration-none">
+		<img src="../../assets/logo.svg">
+		<span id="web-name" class="ms-1 d-none d-lg-inline">Web Wizards</span>
+	</a>
 
-  <div class="d-flex flex-column h-100 p-3">
-    <div class="row contenedor-editor align-content-between ">
-      <div class="col-6 textareas d-flex flex-column row-gap-3 ">
+	<div class="d-flex flex-column h-100 p-3">
+		<div class="row contenedor-editor align-content-between ">
+			<div class="col-6 textareas d-flex flex-column row-gap-3 ">
 
-        <div class="textareas-contenedor">
-          <label for="htmlTextarea">HTML</label>
-          <textarea class="col-12 fs-6" [(ngModel)]="htmlCode" (keyup)="run()" id="htmlTextarea"></textarea>
-        </div>
+				<div class="textareas-contenedor">
+					<label for="htmlTextarea">HTML</label>
+					 <textarea class="col-12 fs-6" [(ngModel)]="proyecto.html" (keyup)="run(proyecto)" id="htmlTextarea"></textarea> 
+				</div>
 
-        <div class="textareas-contenedor">
-          <label for="cssTextarea">CSS</label>
-          <textarea class="col-12 fs-6" [(ngModel)]="cssCode" (keyup)="run()" id="cssTextarea"></textarea>
-        </div>
+				<div class="textareas-contenedor">
+					<label for="cssTextarea">CSS</label>
+					 <textarea class="col-12 fs-6" [(ngModel)]="proyecto.css" (keyup)="run(proyecto)" id="cssTextarea"></textarea> 
+				</div>
 
-        <div class="textareas-contenedor">
-          <label for="jsTextarea">JavaScript</label>
-          <textarea class="col-12 fs-6" [(ngModel)]="jsCode" (keyup)="run()" id="jsTextarea"></textarea>
-        </div>
+				<div class="textareas-contenedor">
+					<label for="jsTextarea">JavaScript</label>
+					<textarea class="col-12 fs-6" [(ngModel)]="proyecto.js" (keyup)="run(proyecto)" id="jsTextarea"></textarea> 
+				</div>
 
-      </div>
-      <div class="col-6 editorDetalles d-flex flex-column">
-        <div class="detalles ">
-          <h3 class="fs-3 fs-lg-4">Sin titulo</h3>
-          <p>Creado por: Tú</p>
-          <p>Última modificación hace: 30 minutos</p>
-        </div>
-        <iframe [srcdoc]="output" sandbox=" allow-modals allow-scripts allow-same-origin"></iframe>
-      </div>
+			</div>
+			<div class="col-6 editorDetalles d-flex flex-column">
+				<div class="detalles ">
+					<h3 class="fs-3 fs-lg-4">{{proyecto.nameProject}}</h3>
+					<p>Creado por: Tú</p>
+					<p>Última modificación hace: 30 minutos</p>
+				</div>
+				<iframe #iframeRef [srcdoc]="output" sandbox=" allow-modals allow-scripts allow-same-origin"></iframe>
+			</div>
 
-    </div>
-    <div class=" mt-3 d-flex justify-content-between fs-6">
-      <a class="">Volver</a>
-      <button class="" type="button" class="btn btn-guardar">Guardar</button>
-    </div>
-  </div>
+		</div>
+		<div class=" mt-3 d-flex justify-content-between fs-6">
+			<a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;">Volver</a>
+			<button class="" type="button" class="btn btn-guardar" (click)="saveProject(proyecto)">Guardar</button>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Esta a punto de volver</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>¿Seguro que quiere volver? Sus cambios podrían perderse.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary btn-cancelar" (click)="goBack()" data-bs-dismiss="modal">Quiero volver</button>
+					<button type="button" class="btn btn-secondary btn-guardar" data-bs-dismiss="modal">No, quiero guardar
+						antes</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
