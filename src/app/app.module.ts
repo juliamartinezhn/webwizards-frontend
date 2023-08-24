@@ -20,6 +20,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
 import { ReusableModalComponent } from './reusable-modal/reusable-modal.component';
+
+import {
+  FacebookLoginProvider,
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,16 +44,30 @@ import { ReusableModalComponent } from './reusable-modal/reusable-modal.componen
     EditorComponent,
     LandingPageComponent,
     ConfigComponent,
-    ReusableModalComponent
+    ReusableModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('994153858584252'),
+        },
+      ],
+    } as SocialAuthServiceConfig,
+  },
+   ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
