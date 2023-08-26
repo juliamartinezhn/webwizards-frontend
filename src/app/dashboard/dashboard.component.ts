@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
     .subscribe(
       res=>{
         this.usuarioLoggeado =  res;
+        console.log(res);
       }
     );
     
