@@ -9,19 +9,25 @@ import { Folders } from 'src/models/model';
 export class ProyectosService {
 
   constructor(private http: HttpClient) { }
+  url = 'http://localhost:8888';
 
   // Crear un proyecto
-  crearProyecto(idCarpetaPadre: any, nombreCarpeta: any): Observable<any> {
-    return this.http.post(`http://localhost:8888/proyectos/carpetas/${idCarpetaPadre}`, nombreCarpeta);
+  crearProyecto(idCarpetaPadre: any, nombreProyecto: any, idCreador: any): Observable<any> {
+    return this.http.post(`${this.url}/proyectos/carpetas/${idCarpetaPadre}/usuarios/${idCreador}`, nombreProyecto);
   }
 
   // Obtener un proyecto
   obtenerInfoProyecto(idProyecto: any): Observable<any> {
-    return this.http.get(`http://localhost:8888/proyectos/${idProyecto}`);
+    return this.http.get(`${this.url}/proyectos/${idProyecto}`);
   }
 
   // Guardar(Actualizar) un proyecto
   guardarProyecto(idProyecto: any, proyectoModificado: any): Observable<any> {
-    return this.http.post(`http://localhost:8888/proyectos/${idProyecto}`, proyectoModificado);
+    return this.http.post(`${this.url}/proyectos/${idProyecto}`, proyectoModificado);
+  }
+
+  // Obtener las colaboraciones de un usuario
+  obtenerColaboracionesDeUsuario(idUsuario: any): Observable<any> {
+    return this.http.get(`${this.url}/proyectos/usuarios/${idUsuario}`);
   }
 }

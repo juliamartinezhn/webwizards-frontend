@@ -9,6 +9,7 @@ import { EditorComponent } from './editor/editor.component';
 import { PlanesComponent } from './planes/planes.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ConfigComponent } from './config/config.component';
+import { SharedComponent } from './shared/shared.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   { 
     path: 'snippets',   
     component: SnippetsComponent 
+  },
+  {
+    path: 'compartido/:carpetaNombre',
+    component: SharedComponent
   },
   {
     path:'editor/:idProyecto',

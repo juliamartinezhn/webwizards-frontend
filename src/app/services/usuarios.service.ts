@@ -10,25 +10,27 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
+  url = 'http://localhost:8888';
+
   registroUsuario(usuario: any):Observable<any>{
-    return this.http.post("http://localhost:8888/usuarios",usuario,{
+    return this.http.post(`${this.url}/usuarios`,usuario,{
       withCredentials: true
     });
   }
 
   obtenerInfoUsuario(): Observable<Usuario> {
-    return this.http.get("http://localhost:8888/usuarios/autenticado", {
+    return this.http.get(`${this.url}/usuarios/autenticado`, {
       withCredentials: true
     });
   }
 
   cerrarSesion(){
-    return this.http.post("http://localhost:8888/usuarios/cerrar-sesion",{}, {
+    return this.http.post(`${this.url}/usuarios/cerrar-sesion`,{}, {
       withCredentials: true
     });
   }
   logIn(usuario: any) :Observable<any> {
-    return this.http.post("http://localhost:8888/usuarios/login",usuario,{
+    return this.http.post(`${this.url}/usuarios/login`,usuario,{
       withCredentials: true
     });
   }

@@ -16,7 +16,7 @@ export class CarpetasService {
   }
 
   // Crear un carpeta
-  crearCarpeta(idCarpetaPadre: any, nombreCarpeta: any): Observable<any> {
-    return this.http.post(`http://localhost:8888/carpetas/${idCarpetaPadre}`, nombreCarpeta);
+  crearCarpeta(idCarpetaPadre: any, nombreCarpeta: any,idCreador: any): Observable<any> {
+    return this.http.post(`http://localhost:8888/carpetas/${idCarpetaPadre}/usuarios/${idCreador}`, nombreCarpeta);
   }
 }

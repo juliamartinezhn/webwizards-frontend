@@ -6,6 +6,7 @@ import { UsuariosService } from '../services/usuarios.service';
 import { ProyectosService } from '../services/proyectos.service';
 import { CarpetasService } from '../services/carpetas.service';
 import { Projects } from 'src/models/model';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -31,7 +32,8 @@ export class EditorComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private usuariosServicio: UsuariosService,
     private proyectosServicio: ProyectosService,
-    private carpetasService: CarpetasService
+    private carpetasService: CarpetasService,
+    private datePipe: DatePipe
   ) { }
 
   
@@ -51,7 +53,7 @@ export class EditorComponent implements AfterViewInit {
         res => {
           this.proyecto = res.project;
           this.run(this.proyecto);
-          console.log(this.proyecto)
+          
         }
       );
   }
@@ -66,6 +68,8 @@ export class EditorComponent implements AfterViewInit {
       }).subscribe(
         res => {
           alert(res.message);
+          this.proyecto = res.proyecto;
+          console.log(res)
         }
       );
   }

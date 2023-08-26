@@ -23,14 +23,16 @@
                                     <li class="nav-item">
 
                                         <!-- Button trigger modal -->
-                                        <button (click)="openModal('Crear proyecto')" type="button" id="btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button (click)="openModal('Crear proyecto')" type="button" id="btnmodal"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <span class="me-lg-3 fs-5 fs-lg-6" style="color: var(--primary-color-2);">
                                                 Crear proyecto
                                             </span>
                                         </button>
                                     </li>
                                     <li class="nav-item">
-                                        <button (click)="openModal('Crear carpeta')" type="button" id="btnmodal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <button (click)="openModal('Crear carpeta')" type="button" id="btnmodal"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <span class=" fs-5 fs-lg-6" style="color: var(--primary-color-2);">
                                                 Crear carpeta
                                             </span>
@@ -42,12 +44,19 @@
                         </div>
                     </nav>
                 </div>
-                <app-reusable-model [content]="content" type="project" />
+                <div class="row">
+                    <div *ngIf="navigationHistory!== 'unidad' 
+                        && navigationHistory!== 'central'" (click)="goBack()" style="cursor: pointer;">
+                        <i class="fa-solid fa-arrow-left fa-2xl mb-4"></i>
+                    </div>
+                    <app-reusable-model [content]="content" type="project" />
+                </div>
             </div>
 
             <!-- Modal -->
 
-            <app-reusable-modal [title]="title" [idCarpetaPadre]="carpetaActual" (content)="actualizarContent($event)"></app-reusable-modal>
+            <app-reusable-modal [title]="title" [idCarpetaPadre]="carpetaActual"
+                (content)="actualizarContent($event)"></app-reusable-modal>
 
         </main>
     </div>
