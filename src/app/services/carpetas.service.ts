@@ -17,6 +17,6 @@ export class CarpetasService {
 
   // Crear un carpeta
   crearCarpeta(idCarpetaPadre: any, nombreCarpeta: any,idCreador: any): Observable<any> {
-    return this.http.post(`https://webwizards.eastasia.cloudapp.azure.com/${idCarpetaPadre}/usuarios/${idCreador}`, nombreCarpeta);
+    return this.http.post(`https://webwizards.eastasia.cloudapp.azure.com/carpetas/${idCarpetaPadre}/usuarios/${idCreador}`, nombreCarpeta);
   }
 }
