@@ -12,11 +12,11 @@ export class CarpetasService {
 
   // Obtener hijos de un folder
   obtenerCarpetasHijas(idCarpetaPadre:any): Observable<any> {
-    return this.http.get(`http://20.205.112.175:8888/carpetas/hijos/${idCarpetaPadre}`);
+    return this.http.get(`https://webwizards.eastasia.cloudapp.azure.com/carpetas/hijos/${idCarpetaPadre}`);
   }
 
   // Crear un carpeta
   crearCarpeta(idCarpetaPadre: any, nombreCarpeta: any,idCreador: any): Observable<any> {
-    return this.http.post(`http://20.205.112.175:8888/carpetas/${idCarpetaPadre}/usuarios/${idCreador}`, nombreCarpeta);
+    return this.http.post(`https://webwizards.eastasia.cloudapp.azure.com/${idCarpetaPadre}/usuarios/${idCreador}`, nombreCarpeta);
   }
 }
