@@ -9,7 +9,7 @@ import { Folders } from 'src/models/model';
 export class ProyectosService {
 
   constructor(private http: HttpClient) { }
-  url = 'http://localhost:8888';
+  url = 'http://20.205.112.175:8888';
 
   // Crear un proyecto
   crearProyecto(idCarpetaPadre: any, nombreProyecto: any, idCreador: any): Observable<any> {
