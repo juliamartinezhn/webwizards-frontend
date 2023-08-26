@@ -7,12 +7,11 @@ import { CarpetasService } from '../services/carpetas.service';
   templateUrl: './reusable-model.component.html',
   styleUrls: ['./reusable-model.component.css']
 })
-export class ReusableModelComponent implements OnInit {
+export class ReusableModelComponent  {
   //Puede ser una carpeta, un proyecto o un snippet
   @Input() content: Array<ContentItem> = [];
 
   @Input() type: string = '';
-  navigationHistory: string = '';
 
   constructor(
     private carpetasService: CarpetasService,
@@ -20,12 +19,7 @@ export class ReusableModelComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(async params => {
-      this.navigationHistory = params['carpetaNombre'];
-    });
-
-  }
+ 
   activate(item: any) {
     if (item.nameFolder) {
       this.router.navigate(['/proyectos/', item._id]);
@@ -35,9 +29,7 @@ export class ReusableModelComponent implements OnInit {
   goToEditor(item:any){
     this.router.navigate(['/editor/', item._id]);
   }
-  goBack() {
-    window.history.back();
-  }
+  
 
   getCarpetasHijas(id: any) {
 

@@ -1,4 +1,5 @@
 export interface Usuario {
+    _id?: string;
     nombre?: string;
     apellido?: string;
     email?: string;
@@ -10,6 +11,9 @@ export interface Usuario {
 export interface Projects {
     _id?: string;
     nameProject?: string;
+    creator?: Usuario;
+    created_at?:Date;
+    modified_at?:Date;
     html?: string;
     css?: string;
     js?: string;

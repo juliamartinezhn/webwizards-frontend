@@ -1,26 +1,32 @@
 <div id="sidebar" class="px-3 pt-2  d-flex flex-column align-items-sm-center justify-content-between min-vh-100">
     <div class="d-flex flex-column align-items-end align-items-lg-start">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 me-md-auto  text-decoration-none">
+        <a routerLink="/dashboard" class="d-flex align-items-center pb-3 mb-3 me-md-auto  text-decoration-none">
             <img src="../../assets/logo.svg">
             <span id="web-name" class="ms-1 d-none d-lg-inline">Web Wizards</span>
         </a>
         <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveDashboard}" (click)="activate('dashboard')">
+            <li class="mb-4 nav-item" [ngClass]="{'active': active=='dashboard'}" (click)="activate('dashboard')">
                 <a routerLink="/dashboard" class="row align-items-center nav-link align-middle px-0">
                     <i class="col-1 fa-solid fa-house fa-lg me-3 "></i>
                     <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Dashboard</span>
                 </a>
             </li>
-            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveProyectos}" (click)="activate('proyectos')">
+            <li class="mb-4 nav-item" [ngClass]="{'active': active=='proyectos/:carpetaNombre'}" (click)="activate('proyectos')">
                 <a routerLink="/proyectos/unidad" class="row align-items-center nav-link px-0 align-middle">
                     <i class="col-1 fa-solid fa-folder fa-lg me-3 "></i>
                     <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Proyectos</span>
                 </a>
             </li>
-            <li class="mb-4 nav-item" [ngClass]="{'active': isActiveSnippets}" (click)="activate('snippets')">
+            <li class="mb-4 nav-item" [ngClass]="{'active': active=='snippets'}" (click)="activate('snippets')">
                 <a routerLink="/snippets" class="row align-items-center nav-link px-0 align-middle">
                     <i class="col-1 fa-solid fa-laptop-code fa-lg me-3 "></i>
                     <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Snippets</span>
+                </a>
+            </li>
+            <li class="mb-4 nav-item" [ngClass]="{'active': active=='compartido'}" (click)="activate('compartido')">
+                <a routerLink="/compartido/central" class="row align-items-center nav-link px-0 align-middle">
+                    <i class="col-1 fa-solid fa-people-arrows fa-lg me-3 "></i>
+                    <span class="opcion ms-1 d-none d-lg-inline fs-5 fs-lg-4">Compartido</span>
                 </a>
             </li>
         </ul>
@@ -30,7 +36,7 @@
     <div class="d-flex flex-column align-items-center mb-3" style="width: 100%;">
 
         <ul class="nav nav-pills flex-column align-items-center">
-            <li class="nav-item" [ngClass]="{'active': isActiveconfig}" (click)="activate('config')">
+            <li class="nav-item" [ngClass]="{'active': active=='config'}" (click)="activate('config')">
                 <a routerLink="/config" class="row align-items-center nav-link px-0 align-middle">
 
                     <i class=" col-1 fa-solid fa-gear fa-lg me-3"></i>

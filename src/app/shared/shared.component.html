@@ -1,0 +1,32 @@
+<div class="container-fluid" style="background: var(--third-color-1);">
+    <div class="row flex-nowrap">
+        <div class="col-auto  col-md-3 col-lg-3  px-sm-2 px-0 " style="max-width: 400px;">
+            <app-sidebar></app-sidebar>
+        </div>
+        <main class="col py-3" style="background: #fff;">
+
+            <div class="container fw-bold" style="color: var(--third-color-2); padding: 3em;">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <div>
+                                <p class="fs-3 fs-lg-4">Compartido</p>
+                                <!-- <p class="m-0 mb-3 fs-4 fs-lg-5" style="color: var(--gray-1);">Mi unidad</p> -->
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="row">
+                    <div *ngIf="navigationHistory!== 'unidad' 
+                        && navigationHistory!== 'central'" (click)="goBack()" style="cursor: pointer;">
+                        <i class="fa-solid fa-arrow-left fa-2xl mb-4"></i>
+                    </div>
+                    <app-reusable-model [content]="content" type="project" />
+                </div>
+            </div>
+
+            <!-- Modal -->
+
+        </main>
+    </div>
+</div>

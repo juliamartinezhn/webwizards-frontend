@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     const url = this.router.url;
     
-    if (url==='/registro'){
+    if (url==='/registro' || url==='/landing-page'){
       this.requiredPath = 'Inicio Sesión';
       this.goTo = '/inicio-sesion';
       

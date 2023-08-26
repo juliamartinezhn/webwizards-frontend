@@ -17,57 +17,60 @@ import { EditorComponent } from './editor/editor.component';
 import { FormsModule } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ConfigComponent } from './config/config.component';
 import { ReusableModalComponent } from './reusable-modal/reusable-modal.component';
-
+import { SharedComponent } from './shared/shared.component';
 import {
-  FacebookLoginProvider,
-  SocialLoginModule,
-  SocialAuthServiceConfig,
+    FacebookLoginProvider,
+    SocialLoginModule,
+    SocialAuthServiceConfig,
 } from '@abacritt/angularx-social-login';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    DashboardComponent,
-    LoginComponent,
-    NavbarComponent,
-    SignupComponent,
-    FooterComponent,
-    PlanesComponent,
-    ProjectsComponent,
-    ReusableModelComponent,
-    SnippetsComponent,
-    EditorComponent,
-    LandingPageComponent,
-    ConfigComponent,
-    ReusableModalComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    SocialLoginModule
+    declarations: [
+        AppComponent,
+        SidebarComponent,
+        DashboardComponent,
+        LoginComponent,
+        NavbarComponent,
+        SignupComponent,
+        FooterComponent,
+        PlanesComponent,
+        ProjectsComponent,
+        ReusableModelComponent,
+        SnippetsComponent,
+        EditorComponent,
+        LandingPageComponent,
+        ConfigComponent,
+        ReusableModalComponent,
+        SharedComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        SocialLoginModule
 
-  ],
-  providers: [{
-    provide: 'SocialAuthServiceConfig',
-    useValue: {
-      autoLogin: false,
-      providers: [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider('994153858584252'),
-        },
-      ],
-    } as SocialAuthServiceConfig,
-  },
-   ],
-  bootstrap: [AppComponent],
+    ],
+    providers: [{
+        provide: 'SocialAuthServiceConfig',
+        useValue: {
+            autoLogin: false,
+            providers: [
+                {
+                    id: FacebookLoginProvider.PROVIDER_ID,
+                    provider: new FacebookLoginProvider('994153858584252'),
+                }
+            ],
+        } as SocialAuthServiceConfig,
+    },
+        DatePipe
+    ],
+    bootstrap: [AppComponent],
 })
 export class AppModule { }
