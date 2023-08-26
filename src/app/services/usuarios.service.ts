@@ -10,7 +10,7 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://localhost:8888';
+  url = 'http://20.205.112.175:8888';
 
   registroUsuario(usuario: any):Observable<any>{
     return this.http.post(`${this.url}/usuarios`,usuario,{
