@@ -6,6 +6,7 @@ export interface Usuario {
     plan?: string;
     fechaNacimiento?: string;
     projectsFolder?: Folders;
+    totalProjects?: Number;
 }
 
 export interface Projects {
@@ -17,6 +18,7 @@ export interface Projects {
     html?: string;
     css?: string;
     js?: string;
+    collaborators?: Array<Usuario>;
 }
 
 export interface Snippets {

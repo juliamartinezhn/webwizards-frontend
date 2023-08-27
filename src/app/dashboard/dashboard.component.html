@@ -1,89 +1,26 @@
 <div class="container-fluid" style="background: var(--third-color-1);">
     <div class="row flex-nowrap">
-        <div class="col-auto  col-md-3 col-lg-3  px-sm-2 px-0 " style="max-width: 400px;">
+        <div class="col-auto  col-md-3 col-lg-3  px-sm-2 px-0 max-vh-100" style="max-width: 400px;">
             <app-sidebar></app-sidebar>
         </div>
-        <main class="col py-3" style="background: #fff;overflow: hidden;">
+        <main class="col py-3" style="background: #fff;overflow: scroll; height: 100vh;">
 
             <div class="container fw-bold" style="color: var(--third-color-2); padding: 3em;">
                 <div>
-                    <p class="fs-3 fs-lg-4">Bienvenido, {{ usuarioLoggeado.nombre }}</p>
-                  </div>
-
-
-                <div id="divcont">
-                    <img src="../../assets/5095021.png" alt="" id="profilepic">
-                    <div id="textos">
-                        <h5 id="titulo">{{usuarioLoggeado.plan}}</h5>
-                        <p id="parrafos">Actualmente cuentas con el plan :</p>
-                    </div>
-
+                    <p class="fs-3 fs-lg-4">Bienvenid@</p>
                 </div>
-                <div class="row">
-                    <div id="proyectos">
-                        <h3>Ultimos Proyectos</h3>
-                        <div id="prueba">
 
-                            <div>
-                                <h2 id="titulosproyectos">Prueba</h2>
-                                <div>
-                                    <p id="parrafosproyectos"> Ultima modificacion : Hace 30 minutos </p>
-                                </div>
-
-
-                            </div>
-
-                            <div id="enlaace">
-                                <a href=""><img src="../../assets/icons8-external-link-96 1.svg" alt="" id="enlace"></a>
-                            </div>
-
-                        </div>
-                        <div id="prueba">
-
-                            <div>
-                                <h2 id="titulosproyectos">Appstore</h2>
-                                <div>
-                                    <p id="parrafosproyectos"> Ultima modificacion : Hace 30 minutos </p>
-                                </div>
-
-
-                            </div>
-
-                            <div id="enlaace">
-                                <a href=""><img src="../../assets/icons8-external-link-96 1.svg" alt="" id="enlace"></a>
-                            </div>
-
-                        </div>
-
-                        <div id="prueba">
-
-                            <div>
-                                <h2 id="titulosproyectos">Pokedex</h2>
-                                <div>
-                                    <p id="parrafosproyectos"> Ultima modificacion : Hace 30 minutos </p>
-                                </div>
-
-
-                            </div>
-
-                            <div id="enlaace">
-                                <a href=""><img src="../../assets/icons8-external-link-96 1.svg" alt="" id="enlace"></a>
-                            </div>
-
-                        </div>
+                <div class="row textos divcont p-3 mb-3 align-items-center justify-content-center justify-content-lg-start">
+                    <div class="col-auto">
+                        <img src="../../assets/5095021.png" alt="" id="profilepic">
                     </div>
-
-
+                    <div class="col-auto">
+                        <h5 id="titulo">{{usuarioLoggeado.nombre}} {{usuarioLoggeado.apellido}}</h5>
+                        <p id="parrafos">{{ usuarioLoggeado.email }}</p>
+                    </div>
                 </div>
-                <!-- <div id="storage">
-                    <div>
-                        <h2 id="titulo-alma"> Almacenamiento </h2>
-                    </div>
-                    <img src="../../assets/porcentaaaje.PNG" alt="" id="porcentajee">
-                    <p id="parrafos-storage">Espacio libre : 3.75/5.00 gb</p>
-                    <p id="parrafos-storage"> N de proyectos: 12</p>
-
-                </div> -->
+                <p class="m-0 mb-1 fs-4 fs-lg-5" style="color: var(--gray-1);">Últimos proyectos</p>
+                <app-reusable-model [content]="content" type="project" />
             </div>
         </main>
     </div>

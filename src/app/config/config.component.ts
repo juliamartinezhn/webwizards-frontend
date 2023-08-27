@@ -44,8 +44,6 @@ usuarioLoggeado:Usuario = {};
   changePlan() {
     const unselectedPlans = this.availablePlans.filter((plan: string | undefined) => plan !== this.usuarioLoggeado.plan);
     this.planesvacios=unselectedPlans;
-    
-    console.log(unselectedPlans);
 
   }
 
@@ -58,7 +56,9 @@ usuarioLoggeado:Usuario = {};
       
       )   .subscribe(
       (res:any)=>{
-        alert(res.message)
+        this.getUsuarioLoggeado();
+        alert(res.message);
+        
       }
     );
   }

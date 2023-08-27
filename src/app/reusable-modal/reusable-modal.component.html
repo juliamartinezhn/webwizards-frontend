@@ -9,7 +9,9 @@
       <form [formGroup]="formulario">
         <div class="modal-body  text-center">
           <input type="text" formControlName="text" id="text"
+            class="form-control "
             [ngClass]="{'wrong-input' : text?.invalid && (text?.dirty || text?.touched)}" placeholder="Nombre"
+            [value]="formulario.value.text"
             required>
           <div *ngIf="text?.invalid && (text?.dirty || text?.touched)" class="wrong-format">Campo requerido</div>
 
@@ -17,7 +19,7 @@
         <div class="modal-footer  d-flex justify-content-center">
 
 
-          <button type="button" id="cancelar" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" id="cancelar" (click)="cerrarModal()" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
 
           <button (click)="guardar()" id="guardar" data-bs-dismiss="modal" [disabled]="!formulario.valid" type="button"
             class="btn btn-primary">{{title}}</button>

@@ -38,6 +38,10 @@ export class ReusableModalComponent implements OnInit {
         return this.formulario.get('text');
     }
 
+    cerrarModal(){
+        this.formulario.value.text = '';
+    }
+
 
     guardar() {
         if (this.title == 'Crear proyecto') {
@@ -81,6 +85,8 @@ export class ReusableModalComponent implements OnInit {
                     }
                 );
         }
+
+        this.formulario.value.text = '';
 
     }
 
