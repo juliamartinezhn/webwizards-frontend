@@ -5,3 +5,43 @@
     margin-bottom: 1em;
     padding: 0 3em 0 2em;
 }
+
+
+.wrong-format {
+    color: #f00;
+    /* text-transform: initial; */
+    font-size: 0.7rem;
+  }
+
+.wrong-input{
+    border: 1px solid #f00;
+}
+
+.info-proyecto{
+    font-size: .8rem;
+}
+
+.guardar{
+    background-color: #6A4BFF;
+    border-radius: 15px;
+    color: #FFFFFF;
+}
+
+.cancelar{
+    background-color: #FFFFFF;
+    color: #6A4BFF;
+    border-radius: 15px;
+    border-color: #6A4BFF;
+}
+
+.label-code{
+    background: var(--primary-color-1);
+    font-size: .8rem;
+}
+
+textarea{
+    height: 100px;
+    background-color: var(--dark-1);
+    color: #fff;
+    /* padding: 1em; */
+}

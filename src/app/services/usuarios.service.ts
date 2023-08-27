@@ -10,7 +10,8 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'https://webwizards.eastasia.cloudapp.azure.com';
+ url = 'https://webwizards.eastasia.cloudapp.azure.com';
+//  url = 'http://localhost:8888';
 
   registroUsuario(usuario: any):Observable<any>{
     return this.http.post(`${this.url}/usuarios`,usuario,{
@@ -35,6 +36,12 @@ export class UsuariosService {
     });
   }
   
+
+  cambiarPlan(usuarioId : any,plan :any){
+    return this.http.post(`${this.url}/usuarios/${usuarioId}`,plan,
+      
+    );
+  }
 
 }
 

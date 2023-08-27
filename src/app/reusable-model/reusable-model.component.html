@@ -1,7 +1,8 @@
 <div *ngIf="content.length!=0" class="py-2 overflow-y-scroll overflow-x-hidden"
     style="border: 1px solid var(--primary-color-3); max-height: 400px;">
     <div *ngFor="let item of content" class="d-flex justify-content-between align-items-center wrapper">
-        <div (click)="activate(item)" style="cursor: pointer;">
+        <div (click)="activate(item)" style="cursor: pointer;" [attr.data-bs-toggle]="item.nameProject ? 'modal' : ''"
+            [attr.data-bs-target]="item.nameProject ? '#staticBackdrop' : ''">
             <i *ngIf="!item.children && type=='project' && !item.nameFolder" class="fa-solid fa-code fs-3 fs-lg-4 me-4"
                 style="color: var(--primary-color-2); "></i>
             <i *ngIf="!item.children && type=='snippet' && !item.nameFolder"
@@ -16,11 +17,113 @@
 
 
         <div *ngIf="!item.nameFolder">
-            
+
             <a (click)="goToEditor(item)" *ngIf="!item.nameFolder" style="cursor: pointer;">
                 <i class="fa-solid fa-arrow-up-right-from-square fs-3 fs-lg-4" style="color: var(--primary-color-2);">
                 </i>
             </a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ proyectoActual.nameProject }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="textareas-contenedor">
+
+                        <label class="label-code" *ngIf="proyectoActual.html!=''">
+                            html
+                        </label>
+                        <textarea readonly *ngIf="proyectoActual.html!=''" class="col-12 mb-3"
+                            style="border: 1px solid var(--primary-color-2);" [value]="proyectoActual.html">
+                        
+                    </textarea>
+                    </div>
+
+                    <div class="textareas-contenedor">
+
+                        <label class="label-code" *ngIf="proyectoActual.css!=''">
+                            css
+                        </label>
+                        <textarea readonly *ngIf="proyectoActual.css!=''" class="col-12 mb-3"
+                            style="border: 1px solid var(--primary-color-2);" [value]="proyectoActual.css">
+                        
+                    </textarea>
+                    </div>
+
+                    <div class="textareas-contenedor">
+
+                        <label class="label-code" *ngIf="proyectoActual.js!=''">
+                            js
+                        </label>
+                        <textarea readonly *ngIf="proyectoActual.js!=''" class="col-12 mb-3"
+                            style="border: 1px solid var(--primary-color-2);" [value]="proyectoActual.js">
+                        
+                    </textarea>
+                    </div>
+                </div>
+                <div class="row justify-content-center info-proyecto" style="color: var(--dark-1);">
+                    <p>Creado por: {{ proyectoActual.creator?.nombre }} {{ proyectoActual.creator?.apellido }}</p>
+                    <div *ngIf="proyectoActual.collaborators?.length!==0">
+                        <p>Colaboradores:</p>
+                        <p *ngFor="let collaborator of proyectoActual.collaborators">
+                           - {{ collaborator.nombre }} {{ collaborator.apellido }}
+                        </p>
+                    </div>
+                    <p>Creación: {{ proyectoActual.created_at | date:'dd/MM/yyyy HH:mm'}}</p>
+                    <p *ngIf="proyectoActual.created_at != proyectoActual.modified_at">
+                        Última modificación: {{ proyectoActual.modified_at | date:'dd/MM/yyyy HH:mm'}}
+                    </p>
+                    <button *ngIf="usuarioLoggeado._id === proyectoActual.creator?._id" class="guardar"
+                        data-bs-toggle="modal" data-bs-target="#colaboradorModal" style="border: none; width: 30%; font-size: 1rem;">Añadir colaborador</button>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="colaboradorModal" tabindex="-1" aria-labelledby="colaboradorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="colaboradorModalLabel">Añadir colaborador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formularioColaborador" class="d-flex flex-column">
+                    <div class="form-group d-flex flex-column justify-content-center align-items-center">
+                        <label for="collabEmail">Email del Colaborador</label>
+                        <input type="text" id="collabEmail" formControlName="collabEmail" placeholder="Email" required
+                            [value]="formularioColaborador.value.collabEmail"
+                            class="form-control "
+                            [ngClass]="{'wrong-input' : collabEmail?.invalid && (collabEmail?.dirty || collabEmail?.touched)}">
+                        <div *ngIf="collabEmail?.invalid && (collabEmail?.dirty || collabEmail?.touched)"
+                            class="wrong-format">Campo requerido </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn cancelar" (click)="cerrarModal()"
+                    data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" data-bs-dismiss="modal" (click)="anadirColaborador()"
+                    [disabled]="!formularioColaborador.valid" class="btn guardar">Añadir</button>
+            </div>
         </div>
     </div>
 </div>

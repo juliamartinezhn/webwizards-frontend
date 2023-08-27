@@ -3,64 +3,132 @@
         <div class="col-auto  col-md-3 col-lg-3  px-sm-2 px-0 " style="max-width: 400px;">
             <app-sidebar></app-sidebar>
         </div>
+        <main class="col py-3" style="background: #fff;overflow: scroll; height: 100vh;">
 
-<div style="background-color: white;">
-    <div class="container fw-bold" style="color: var(--third-color-2); padding: 3em;">
-        <div>
-            <p class="fs-3 fs-lg-4">Bienvenido,{{ usuarioLoggeado.nombre }} </p>
-          </div>
+            <!-- <div style="background-color: white;"> -->
+            <div class="container fw-bold" style="color: var(--third-color-2); padding: 3em;">
+                <div>
+                    <p class="fs-3 fs-lg-4">{{ usuarioLoggeado.nombre }} {{ usuarioLoggeado.apellido }}</p>
+                </div>
+
+                <div class="row textos divcont p-3 mb-3 align-items-center justify-content-center justify-content-lg-start">
+                    <div class="col-12 text-center">
+                        <img src="../../assets/5095021.png" alt="" id="profilepic">
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <h5 id="titulo" class="fs-3">Actualmente cuenta con el plan :</h5>
+                        <p id="parrafos" class="fs-5">{{ usuarioLoggeado.plan }}</p>
+                        <!-- <h4 class="">Proyectos</h4> -->
+                        <p class="">
+                            Proyectos {{ usuarioLoggeado.totalProjects }}/{{ 
+                                usuarioLoggeado.plan === 'Gratis' ? '10' 
+                                : (usuarioLoggeado.plan === 'Plus' ? '30' : '50') 
+                            }}
+                        </p>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button id="editbtn" (click)="changePlan()" type="button" class="btn btn-primary"
+                            data-bs-toggle="modal" data-bs-target="#exampleModalCenter"> <img
+                                src="../../assets/icons8-pen-squared-48 1.png" id="penbtn" alt="">
+                        </button>
     
-    
-        <div id="divcont">
-            <img src="../../assets/5095021.png" alt="" id="profilepic">
-            <div id="textos">
-                <h5 id="titulo"></h5>
-                <p id="parrafos">Actualmente cuentas con el plan : {{usuarioLoggeado.plan}}</p>
+                    </div>
+                    
+                </div>
+                <!-- <div class="row">
+                    <div class="col-6 row">
+                        <h4 class="col-12">Proyectos</h4>
+                        <p class="col-12">
+                            {{ usuarioLoggeado.totalProjects }}/{{ 
+                                usuarioLoggeado.plan === 'Gratis' ? '10' 
+                                : (usuarioLoggeado.plan === 'Plus' ? '30' : '50') 
+                            }}
+                        </p>
+
+                    </div>
+                    
+                </div> -->
+                
+
+                <!-- 
+
+                <div class="row justify-content-evenly">
+                    <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets se cargan
+                                automaticamente</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Tu perfil es publicos</label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Tus proyectos son
+                                publicos</label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets son
+                                publicos</label>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+ -->
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" 
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Elige un nuevo plan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form [formGroup]="cambioPlan">
+                                    <label for="inputState">Seleccione un nuevo plan</label>
+                                    <select formControlName="plan" class="form-control input-model" id="inputState"
+                                        [ngClass]="{'wrong-input' : plan?.invalid && (plan?.dirty || plan?.touched)}">
+                                        <option *ngFor="let plan of planesvacios" [value]="plan" required>{{ plan }}
+                                        </option>
+                                    </select>
+                                    <div *ngIf="plan?.invalid && (plan?.dirty || plan?.touched)" class="wrong-format">
+                                        Campo requerido </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn cancelar" data-bs-dismiss="modal">Cerrar</button>
+                                <button  type="button" data-bs-dismiss="modal" (click)="guardarPlan()"  
+                                    [disabled]="!cambioPlan.valid" class="btn guardar">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-    
-                     
-                </div>
-    
-    
-                
-            <div class="row justify-content-evenly">
-                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
-                 
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets se cargan automaticamente</label>
-                      </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
-            
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Tu perfil es publicos</label>
-                      </div>
-                </div>
-    
-    
-    
-                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
-            
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus proyectos son publicos</label>
-                      </div>
-                </div>
-    
-    
-                
-                <div class="col-lg-6 col-md-12 col-sm-12" id="contconfig">
-            
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Tus snippets son publicos</label>
-                      </div>
-                </div>
-    
-    
-    
-                
-              </div>
-    </div>
+        </main>

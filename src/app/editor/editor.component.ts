@@ -69,7 +69,6 @@ export class EditorComponent implements AfterViewInit {
         res => {
           alert(res.message);
           this.proyecto = res.proyecto;
-          console.log(res)
         }
       );
   }

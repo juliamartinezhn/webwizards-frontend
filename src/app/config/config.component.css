@@ -1,79 +1,55 @@
-.row{
-    display: flex;
+.guardar{
+    background-color: #6A4BFF;
+    border-radius: 15;
+    color: #FFFFFF;
 }
 
-#divcont{
+
+.cancelar{
+    background-color: #FFFFFF;
+    color: #6A4BFF;
+    border-radius: 15;
+    border-color: #6A4BFF;
+}
+
+
+.wrong-format {
+    color: #f00;
+    font-size: 0.7rem;
+  }
+
+.wrong-input{
+    border: 1px solid #f00;
+}
+.divcont {
     background-color: #E9E4FF;
-border-radius: 15px;
-margin-left: 40px;
-margin-right: 40px;
-margin-top: 40px;
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: flex-start;
-align-items: center;
-align-content: stretch;
-height: 169px; width: 869px;
+    border-radius: 15px;
 }
 
-#profilepic{
+#profilepic {
     height: 120px;
     width: 120px;
-    margin-left: 40px;
-margin-right: 40px;
+}
+#editbtn{
+    border: none;
+    background-color: inherit;
 }
 
-#titulo{
+#titulo {
     color: #6A4BFF;
-  font-weight: bold;
- font-size: 30px;
+    font-weight: bold;
 }
 
-#parrafos{
+#parrafos {
     color: #929290;
 
 }
 
 
+@media (max-width: 768px) {
 
-
-
-
-
-
-
-#contconfig{
- 
-    border-radius: 8;
-  margin-top: 100px;
-}
-
-
-@media (max-width : 1000px){
-    #divcont{
-        background-color: #E9E4FF;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
-    height: 120px; width: 269px;
+    #profilepic {
+        height: 100px;
+        width: 100px;
     }
-    #profilepic{
-        height: 40px;
-        width: 40px;
-        margin-left: 40px;
-    margin-right: 40px;
-    }
-
-    #parrafos{
-        font-size: small;
-        margin-right: 20px;
-            }
 }

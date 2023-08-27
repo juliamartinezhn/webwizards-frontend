@@ -10,6 +10,7 @@ export class ProyectosService {
 
   constructor(private http: HttpClient) { }
   url = 'https://webwizards.eastasia.cloudapp.azure.com';
+  // url = 'http://localhost:8888';
 
   // Crear un proyecto
   crearProyecto(idCarpetaPadre: any, nombreProyecto: any, idCreador: any): Observable<any> {
@@ -29,5 +30,15 @@ export class ProyectosService {
   // Obtener las colaboraciones de un usuario
   obtenerColaboracionesDeUsuario(idUsuario: any): Observable<any> {
     return this.http.get(`${this.url}/proyectos/usuarios/${idUsuario}`);
+  }
+
+  // Obtener las colaboraciones de un usuario
+  obtenerUltimosProyectos(idUsuario: any): Observable<any> {
+    return this.http.get(`${this.url}/proyectos/usuarios/${idUsuario}/ultimos`);
+  }
+
+   // Añadir colaborador al proyecto
+   anadirColaboradorProyecto(idProyecto: any, collabEmail:any): Observable<any> {
+    return this.http.get(`${this.url}/proyectos/${idProyecto}/usuarios/${collabEmail}`);
   }
 }
