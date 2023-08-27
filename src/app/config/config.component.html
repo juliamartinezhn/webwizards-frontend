@@ -17,6 +17,13 @@
                 <h5 id="titulo"></h5>
                 <p id="parrafos">Actualmente cuentas con el plan : {{usuarioLoggeado.plan}}</p>
             </div>
+
+            <div >
+               
+               <button id="editbtn"   (click)="changePlan()"  type="button" class="btn btn-primary" data-bs-toggle="modal" 
+               data-bs-target="#exampleModalCenter"  >   <img src="../../assets/icons8-pen-squared-48 1.png" id="penbtn"      alt=""></button>
+               
+            </div>
     
                      
                 </div>
@@ -63,4 +70,36 @@
     
                 
               </div>
+
+              
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Elige un nuevo plan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="cambioPlan" >
+            <select formControlName="plan" class="form-control input-model" id="inputState"  [(ngModel)]="usuarioLoggeado.plan" >
+                
+                <option  *ngFor="let plan of planesvacios" [value]="plan"  required>{{ plan }}</option>
+            </select>
+          
+            <div>  <label for="">Selecciona un nuevo plan</label></div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button (click)="guardarPlan()"   type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>

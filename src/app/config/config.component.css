@@ -76,4 +76,22 @@ margin-right: 40px;
         font-size: small;
         margin-right: 20px;
             }
+
+            #penbtn{
+               margin-left: 0px;
+                   position: absolute;
+                }
+}
+
+@media (min-width : 1001px){
+    #penbtn{
+        margin-left: 250px !important;
+            position:relative;
+        }
+}
+
+
+#editbtn{
+    border: none;
+    background-color: inherit;
 }
